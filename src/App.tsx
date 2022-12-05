@@ -8,9 +8,9 @@ function App() {
     return (
         <div className="App">
             <AppTitle/>
-            <Rating/>
+            <Rating value={3}/>
             <Accordion/>
-            <Rating/>
+            <Rating value={4}/>
         </div>
     );
 }
