@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
 
 function App() {
     console.log('app rendering')
@@ -18,28 +19,6 @@ function AppTitle() {
     console.log('appTitle rendering')
     return (
         <>Hello, samurai! Let's go!</>
-    );
-}
-
-function Rating() {
-    //debugger
-    console.log('rating rendering')
-    return (
-        <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-        </div>
-    );
-}
-
-function Star() {
-    //debugger;
-    console.log('star rendering')
-    return (
-        <div>star</div>
     );
 }
 
