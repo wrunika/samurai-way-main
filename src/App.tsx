@@ -17,7 +17,11 @@ function App() {
     );
 }
 
-function PageTitle(props: any) {
+type PageTitlePropsType = {
+    title: string
+}
+
+function PageTitle(props: PageTitlePropsType) {
     debugger
     console.log('appTitle rendering')
     return (
