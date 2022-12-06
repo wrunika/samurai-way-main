@@ -7,18 +7,21 @@ function App() {
     console.log('app rendering')
     return (
         <div className="App">
-            <AppTitle/>
+            <PageTitle title={"Hello, samurai! Let's go!"}/>
+            <PageTitle title={"Hello, Friends!"}/>
             <Rating value={2}/>
-            <Accordion/>
+            <Accordion title={"Меню"}/>
+            <Accordion title={"Список"}/>
             <Rating value={4}/>
         </div>
     );
 }
 
-function AppTitle() {
+function PageTitle(props: any) {
+    debugger
     console.log('appTitle rendering')
     return (
-        <>Hello, samurai! Let's go!</>
+        <h1>{ props.title }</h1>
     );
 }
 

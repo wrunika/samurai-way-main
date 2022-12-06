@@ -1,19 +1,21 @@
 import React from "react";
 
-function Accordion() {
+function Accordion(props: any) {
+    debugger
     console.log('accordion rendering')
     return (
         <div>
-            <AccordionTitle/>
+            <AccordionTitle titleAcc={props.title}/>
             <AccordionBody/>
         </div>
     );
 }
 
-function AccordionTitle() {
+function AccordionTitle(propsAcc: any) {
+    debugger
     console.log('accordionTitle rendering')
     return(
-        <h3>Меню</h3>
+        <h3>{propsAcc.titleAcc}</h3>
     );
 }
 
@@ -23,7 +25,7 @@ function AccordionBody() {
         <ul>
             <li>1</li>
             <li>2</li>
-            <li>2</li>
+            <li>3</li>
         </ul>
     );
 }
