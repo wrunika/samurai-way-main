@@ -22,7 +22,7 @@ type PageTitlePropsType = {
 }
 
 function PageTitle(props: PageTitlePropsType) {
-    debugger
+    //debugger
     console.log('appTitle rendering')
     return (
         <h1>{ props.title }</h1>
