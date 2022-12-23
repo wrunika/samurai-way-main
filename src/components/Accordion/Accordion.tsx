@@ -6,9 +6,15 @@ type AccordionPropsType = {
 }
 
 function Accordion(props: AccordionPropsType) {
-    //debugger
-    console.log('accordion rendering')
-    if (props.collapsed) {
+    debugger
+    //console.log('accordion rendering')
+    return (
+        <div>
+            <AccordionTitle title={props.titleValue} />
+            {props.collapsed || <AccordionBody /> }
+        </div>
+    )
+    /*if (props.collapsed) {
         return (
             <div>
                 <AccordionTitle title={props.titleValue}/>
@@ -21,7 +27,7 @@ function Accordion(props: AccordionPropsType) {
                 <AccordionBody/>
             </div>
         );
-    }
+    }*/
 }
 
 type AccordionTitlePropsType = {
@@ -29,7 +35,7 @@ type AccordionTitlePropsType = {
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
-    debugger
+    //debugger
     console.log('accordionTitle rendering')
     return(
         <h3>{props.title}</h3>
