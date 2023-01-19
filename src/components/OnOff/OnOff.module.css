@@ -1,0 +1,17 @@
+.circle {
+    display: inline-block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border: solid 1px black;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.buttonGreen {
+    background-color: green;
+}
+
+.buttonRed {
+    background-color: red;
+}
