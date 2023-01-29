@@ -5,42 +5,32 @@ type AccordionPropsType = {
 }
 
 function UncontrolledAccordion(props: AccordionPropsType) {
-    //debugger
-    //console.log('accordion rendering')
-    const [collapsed, setCollapsed] = useState<boolean>(true)
-    let nameButton = collapsed ? 'show menu' : 'hide menu';
 
+    const [collapsed, setCollapsed] = useState<boolean>(false)
+    //let nameButton = collapsed ? 'show menu' : 'hide menu';
+    const changeViewOfMenu = () => {
+      setCollapsed(!collapsed)
+    }
     return (
         <div>
-            <AccordionTitle title={props.titleValue} /> <button onClick={ ()=>{setCollapsed(!collapsed)} } >{nameButton}</button>
+            <AccordionTitle title={props.titleValue} changeViewOfMenu={changeViewOfMenu} />
+            {/*<button onClick={ ()=>{setCollapsed(!collapsed)} } >{nameButton}</button>*/}
             {collapsed || <AccordionBody /> }
         </div>
     )
-    /*if (props.collapsed) {
-        return (
-            <div>
-                <AccordionTitle title={props.titleValue}/>
-            </div>
-        )
-    } else {
-        return (
-            <div>
-                <AccordionTitle title={props.titleValue}/>
-                <AccordionBody/>
-            </div>
-        );
-    }*/
+
 }
 
 type AccordionTitlePropsType = {
     title: string
+    changeViewOfMenu: ()=>void
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     //debugger
-    console.log('accordionTitle rendering')
+    //console.log('accordionTitle rendering')
     return(
-        <h3>{props.title}</h3>
+        <h3 onClick={props.changeViewOfMenu} >{props.title}</h3>
     );
 }
 
