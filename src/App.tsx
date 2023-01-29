@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
@@ -6,16 +6,29 @@ import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
+
+
 function App() {
     console.log('app rendering')
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+    const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
+
+    const changeRatingValue = (ratingValue: RatingValueType) => {
+        setRatingValue(ratingValue)
+    }
+    const changeAccordionCollapsed = (accordionCollapsed: boolean) => {
+        setAccordionCollapsed(!accordionCollapsed)
+    }
+
     return (
         <div className="App">
             <PageTitle title={"Hello, samurai! Let's go!"}/>
             <PageTitle title={"Hello, Friends!"}/>
-            <Rating value={2}/>
-            <Accordion titleValue={"Menu"} collapsed={false}/>
-            <Accordion titleValue={"Users"} collapsed={false}/>
-            <Rating value={4}/>
+            <Rating ratingValue={ratingValue} changeRatingValue={changeRatingValue} />
+            <Accordion titleValue={"Menu"} collapsed={accordionCollapsed} changeAccordionCollapsed={changeAccordionCollapsed} />
+            {/*<Accordion titleValue={"Users"} collapsed={accordionCollapsed} changeAccordionCollapsed={changeAccordionCollapsed} />*/}
+            <Rating ratingValue={ratingValue} changeRatingValue={changeRatingValue} />
             <OnOff />
             <UncontrolledAccordion titleValue={"Menu-2"} />
             <UncontrolledRating />
