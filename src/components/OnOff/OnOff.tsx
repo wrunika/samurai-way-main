@@ -1,13 +1,17 @@
-import React, {useState} from "react";
+import React from "react";
 import s from './OnOff.module.css'
 
-const OnOff = () => {
-    const [on, setOn] = useState<boolean>(false);
+type OnOffPropsType = {
+    on: boolean
+    changeOnOff: (on: boolean)=>void
+}
+const OnOff = (props: OnOffPropsType) => {
+
     const onStyle = {
-        backgroundColor: on ? "green" : "white",
+        backgroundColor: props.on ? "green" : "white",
     }
     const offStyle = {
-        backgroundColor: !on ? "red" : "white",
+        backgroundColor: !props.on ? "red" : "white",
     }
     const indicatorStyle = {
         display: "inline-block",
@@ -16,25 +20,13 @@ const OnOff = () => {
         border: "solid 1px black",
         borderRadius: "50%",
         marginLeft: "5px",
-        backgroundColor: on ? "green" : "red",
+        backgroundColor: props.on ? "green" : "red",
     }
   return(
       <div className={s.onOffWrapper}>
-          <button onClick={ ()=>{setOn(true)} } style={onStyle} >On</button>
-          <button onClick={ ()=>{setOn(false)} } style={offStyle} >Off</button>
+          <button onClick={ ()=>{props.changeOnOff(true)} } style={onStyle} >On</button>
+          <button onClick={ ()=>{props.changeOnOff(false)} } style={offStyle} >Off</button>
           <div style={indicatorStyle} ></div>
-          {/*{turnOn && <>
-          <button className={s.buttonGreen}>On</button>
-          <button>Off</button>
-          <div className={`${s.circle} ${s.buttonGreen}`}></div>
-          </>
-          }
-          {!turnOn && <>
-              <button>On</button>
-              <button className={s.buttonRed}>Off</button>
-              <div className={`${s.circle} ${s.buttonRed}`}></div>
-          </>
-          }*/}
       </div>
   )
 }
