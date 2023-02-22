@@ -7,6 +7,9 @@ import UncontrolledAccordion from "./components/UncontrolledAccordion/Uncontroll
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import OnOff from "./components/OnOff/OnOff";
 import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInput";
+import {ControlledInput} from "./components/ControlledInput/ControlledInput";
+import {ControlledCheckbox} from "./components/ControlledInput/ControlledCheckbox";
+import {ControlledSelect} from "./components/ControlledInput/ControlledSelect";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -14,6 +17,9 @@ export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 function App() {
     console.log('app rendering')
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+    const [parentInputValue, setParentInputValue] = useState('');
+    const [parentCheckboxValue, setParentCheckboxValue] = useState(false);
+    const [parentSelectValue, setParentSelectValue] = useState<string | undefined>(undefined);
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
     const [on, setOn] = useState<boolean>(false)
 
@@ -40,6 +46,9 @@ function App() {
             <UncontrolledAccordion titleValue={"Menu-2"} />
             <UncontrolledRating />
             <UncontrolledInput />
+            <ControlledInput parentInputValue={parentInputValue} setParentInputValue={setParentInputValue} />
+            <ControlledCheckbox parentCheckboxValue={parentCheckboxValue} setParentCheckboxValue={setParentCheckboxValue} />
+            <ControlledSelect parentSelectValue={parentSelectValue} setParentSelectValue={setParentSelectValue} />
         </div>
     );
 }

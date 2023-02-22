@@ -18,7 +18,7 @@ export const UncontrolledInput = () => {
             </div>
             <div>
                 <input ref={inputRef} />
-                <button onClick={saveInputValue}>save</button> - actual value: {valueForButton}
+                <button onClick={saveInputValue} >save</button> - actual value: {valueForButton}
             </div>
         </div>
     );
