@@ -6,6 +6,7 @@ import UncontrolledOnOff from "./components/OnOff/UncontrolledOnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import OnOff from "./components/OnOff/OnOff";
+import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInput";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -38,6 +39,7 @@ function App() {
             <UncontrolledOnOff />
             <UncontrolledAccordion titleValue={"Menu-2"} />
             <UncontrolledRating />
+            <UncontrolledInput />
         </div>
     );
 }
