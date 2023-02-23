@@ -4,7 +4,7 @@ type ValueType = 0 | 1 | 2 | 3 | 4 | 5;
 
 export function UncontrolledRating() {
     //debugger
-    console.log('rating rendering')
+    //console.log('rating rendering')
     const [value, setValue] = useState<ValueType>(0);
 
     return (
@@ -32,7 +32,7 @@ type StarPropsType = {
 
 function Star(props: StarPropsType) {
     //debugger;
-    console.log('star rendering')
+    //console.log('star rendering')
     return(
         <span onClick={ ()=>{props.setValue(props.value)} }>{props.selected ? <b>star </b> : 'star ' }</span>
     )

@@ -1,0 +1,24 @@
+.mySelect {
+    width: 80px;
+    /*margin: 0 auto;*/
+    background-color: white;
+}
+
+.mySelect .firstTitle {
+    /*margin: 0 auto;*/
+    /*padding: 5px;*/
+    border: 1px solid black;
+}
+
+.items {
+    /*display: none;*/
+    position: absolute;
+    margin: 0 auto;
+    width: 80px;
+    border: 1px solid black;
+}
+
+.item.selected {
+    background-color: #1ea7fd;
+    color: #fff;
+}

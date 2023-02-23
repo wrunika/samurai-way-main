@@ -8,7 +8,7 @@ type RatingPropsType = {
 
 export function Rating(props: RatingPropsType) {
     //debugger
-    console.log('rating rendering')
+    //console.log('rating rendering')
     return (
         <div>
             <Star selected={props.ratingValue > 0} changeRatingValue={ ()=>{props.changeRatingValue(1)} } />
@@ -27,7 +27,7 @@ type StarPropsType = {
 
 function Star(props: StarPropsType) {
     //debugger;
-    console.log('star rendering')
+    //console.log('star rendering')
     return <span onClick={props.changeRatingValue}>{props.selected ? <b>star </b> : 'star '}</span>
 
     /*if (props.selected) {

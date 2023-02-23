@@ -35,7 +35,7 @@ function AccordionTitle(props: AccordionTitlePropsType) {
 }
 
 function AccordionBody() {
-    console.log('accordionBody rendering')
+    //console.log('accordionBody rendering')
     return(
         <ul>
             <li>1</li>
