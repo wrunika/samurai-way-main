@@ -12,6 +12,7 @@ import {ControlledCheckbox} from "./components/ControlledInput/ControlledCheckbo
 import {ControlledSelect} from "./components/ControlledInput/ControlledSelect";
 import {Select, SelectM} from "./components/Select/Select";
 import {ComponentWithMemo} from "./components/ComponentWithMemo/ComponentWithMemo";
+import ComponentWithUseMemo from "./components/ComponentWithUseMemo";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -77,6 +78,7 @@ function App() {
             <ControlledCheckbox parentCheckboxValue={parentCheckboxValue} setParentCheckboxValue={setParentCheckboxValue} />
             <ControlledSelect parentSelectValue={parentSelectValue} setParentSelectValue={setParentSelectValue} />
             <ComponentWithMemo />
+            <ComponentWithUseMemo />
         </div>
     );
 }
