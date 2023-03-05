@@ -8,17 +8,19 @@ type RatingPropsType = {
 
 export function Rating(props: RatingPropsType) {
     //debugger
-    //console.log('rating rendering')
+    console.log('rating rendering')
     return (
         <div>
-            <Star selected={props.ratingValue > 0} changeRatingValue={ ()=>{props.changeRatingValue(1)} } />
-            <Star selected={props.ratingValue > 1} changeRatingValue={ ()=>{props.changeRatingValue(2)} } />
-            <Star selected={props.ratingValue > 2} changeRatingValue={ ()=>{props.changeRatingValue(3)} } />
-            <Star selected={props.ratingValue > 3} changeRatingValue={ ()=>{props.changeRatingValue(4)} } />
-            <Star selected={props.ratingValue > 4} changeRatingValue={ ()=>{props.changeRatingValue(5)} } />
+            <StarM selected={props.ratingValue > 0} changeRatingValue={ ()=>{props.changeRatingValue(1)} } />
+            <StarM selected={props.ratingValue > 1} changeRatingValue={ ()=>{props.changeRatingValue(2)} } />
+            <StarM selected={props.ratingValue > 2} changeRatingValue={ ()=>{props.changeRatingValue(3)} } />
+            <StarM selected={props.ratingValue > 3} changeRatingValue={ ()=>{props.changeRatingValue(4)} } />
+            <StarM selected={props.ratingValue > 4} changeRatingValue={ ()=>{props.changeRatingValue(5)} } />
         </div>
     )
 }
+
+export const RatingM = React.memo(Rating);
 
 type StarPropsType = {
     selected: boolean
@@ -27,7 +29,7 @@ type StarPropsType = {
 
 function Star(props: StarPropsType) {
     //debugger;
-    //console.log('star rendering')
+    console.log('star rendering')
     return <span onClick={props.changeRatingValue}>{props.selected ? <b>star </b> : 'star '}</span>
 
     /*if (props.selected) {
@@ -36,3 +38,5 @@ function Star(props: StarPropsType) {
         return <span>star </span>
     }*/
 }
+
+export const StarM = React.memo(Star)

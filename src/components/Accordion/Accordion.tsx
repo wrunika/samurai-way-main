@@ -13,12 +13,13 @@ function Accordion(props: AccordionPropsType) {
     //console.log('accordion rendering')
     return (
         <div>
-            <AccordionTitle title={props.titleValue} changeAccordionCollapsed={ ()=> {props.changeAccordionCollapsed(props.collapsed)} } />
-            {props.collapsed || <AccordionBody items={props.items} onClickCallBack={props.onClickCallBack} /> }
+            <AccordionTitleM title={props.titleValue} changeAccordionCollapsed={ ()=> {props.changeAccordionCollapsed(props.collapsed)} } />
+            {props.collapsed || <AccordionBodyM items={props.items} onClickCallBack={props.onClickCallBack} /> }
         </div>
     )
 
 }
+export const AccordionM = React.memo(Accordion);
 
 type AccordionTitlePropsType = {
     title: string
@@ -32,6 +33,7 @@ function AccordionTitle(props: AccordionTitlePropsType) {
         <h3 onClick={props.changeAccordionCollapsed}>{props.title}</h3>
     );
 }
+const AccordionTitleM = React.memo(AccordionTitle);
 
 type ItemType = {
     title: string
@@ -56,5 +58,6 @@ function AccordionBody(props: AccordionBodyPropsType) {
         </ul>
     );
 }
+const AccordionBodyM = React.memo(AccordionBody);
 
 export default Accordion;

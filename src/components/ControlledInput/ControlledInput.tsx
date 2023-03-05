@@ -6,6 +6,7 @@ type ControlledInputPropsType = {
 }
 
 export const ControlledInput = (props: ControlledInputPropsType) => {
+    console.log('controlledInput rendering')
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
       props.setParentInputValue(e.currentTarget.value)
     }
@@ -16,3 +17,5 @@ export const ControlledInput = (props: ControlledInputPropsType) => {
         </div>
     );
 };
+
+export const ControlledInputM = React.memo(ControlledInput);

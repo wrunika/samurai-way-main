@@ -77,3 +77,5 @@ export const Select = (props: SelectPropsType) => {
         </div>
     );
 };
+
+export const SelectM = React.memo(Select);

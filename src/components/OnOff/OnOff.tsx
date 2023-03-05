@@ -31,4 +31,6 @@ const OnOff = (props: OnOffPropsType) => {
   )
 }
 
+export const OnOffM = React.memo(OnOff);
+
 export default OnOff;

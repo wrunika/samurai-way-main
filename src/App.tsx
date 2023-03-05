@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import Accordion, {AccordionM} from "./components/Accordion/Accordion";
+import {Rating, RatingM} from "./components/Rating/Rating";
 import UncontrolledOnOff from "./components/OnOff/UncontrolledOnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
-import OnOff from "./components/OnOff/OnOff";
+import OnOff, {OnOffM} from "./components/OnOff/OnOff";
 import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInput";
-import {ControlledInput} from "./components/ControlledInput/ControlledInput";
+import {ControlledInput, ControlledInputM} from "./components/ControlledInput/ControlledInput";
 import {ControlledCheckbox} from "./components/ControlledInput/ControlledCheckbox";
 import {ControlledSelect} from "./components/ControlledInput/ControlledSelect";
-import {Select} from "./components/Select/Select";
+import {Select, SelectM} from "./components/Select/Select";
 import {ComponentWithMemo} from "./components/ComponentWithMemo/ComponentWithMemo";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
@@ -49,19 +49,31 @@ function App() {
 
     return (
         <div className="App">
-            <PageTitle title={"Hello, samurai! Let's go!"}/>
-            <PageTitle title={"Hello, Friends!"}/>
-            <Rating ratingValue={ratingValue} changeRatingValue={changeRatingValue} />
-            <OnOff on={on} changeOnOff={changeOnOff} />
-            <Accordion titleValue={"Menu"} collapsed={accordionCollapsed} items={menu} onClickCallBack={onClickCallBack} changeAccordionCollapsed={changeAccordionCollapsed} />
-            <Accordion titleValue={"Users"} collapsed={accordionCollapsed} items={users} onClickCallBack={onClickCallBack} changeAccordionCollapsed={changeAccordionCollapsed} />
-            <Rating ratingValue={ratingValue} changeRatingValue={changeRatingValue} />
+            <PageTitleM title={"Hello, samurai! Let's go!"}/>
+            <PageTitleM title={"Hello, Friends!"}/>
+            <RatingM ratingValue={ratingValue} changeRatingValue={changeRatingValue} />
+            <OnOffM on={on} changeOnOff={changeOnOff} />
+            <AccordionM
+                titleValue={"Menu"}
+                collapsed={accordionCollapsed}
+                items={menu}
+                onClickCallBack={onClickCallBack}
+                changeAccordionCollapsed={changeAccordionCollapsed}
+            />
+            {/*<Accordion
+                titleValue={"Users"}
+                collapsed={accordionCollapsed}
+                items={users}
+                onClickCallBack={onClickCallBack}
+                changeAccordionCollapsed={changeAccordionCollapsed}
+            />*/}
+            <RatingM ratingValue={ratingValue} changeRatingValue={changeRatingValue} />
             <UncontrolledOnOff />
             <UncontrolledAccordion titleValue={"Menu-2"} />
             <UncontrolledRating />
             <UncontrolledInput />
-            <Select value={selectValue} items={selectItems} onClickSelect={onClickSelect} />
-            <ControlledInput parentInputValue={parentInputValue} setParentInputValue={setParentInputValue} />
+            <SelectM value={selectValue} items={selectItems} onClickSelect={onClickSelect} />
+            <ControlledInputM parentInputValue={parentInputValue} setParentInputValue={setParentInputValue} />
             <ControlledCheckbox parentCheckboxValue={parentCheckboxValue} setParentCheckboxValue={setParentCheckboxValue} />
             <ControlledSelect parentSelectValue={parentSelectValue} setParentSelectValue={setParentSelectValue} />
             <ComponentWithMemo />
@@ -75,10 +87,10 @@ type PageTitlePropsType = {
 
 function PageTitle(props: PageTitlePropsType) {
     //debugger
-    //console.log('appTitle rendering')
+    console.log('appTitle rendering')
     return (
         <h1>{ props.title }</h1>
     );
 }
-
+const PageTitleM = React.memo(PageTitle);
 export default App;
