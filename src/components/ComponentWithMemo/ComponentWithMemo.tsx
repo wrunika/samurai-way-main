@@ -35,4 +35,4 @@ const Users = (props: UsersPropsType) => {
   )
 }
 
-const UsersMemoContainer = React.memo(Users);
+export const UsersMemoContainer = React.memo(Users);

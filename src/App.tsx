@@ -10,9 +10,11 @@ import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInpu
 import {ControlledInput, ControlledInputM} from "./components/ControlledInput/ControlledInput";
 import {ControlledCheckbox} from "./components/ControlledInput/ControlledCheckbox";
 import {ControlledSelect} from "./components/ControlledInput/ControlledSelect";
-import {Select, SelectM} from "./components/Select/Select";
+import {SelectM} from "./components/Select/Select";
 import {ComponentWithMemo} from "./components/ComponentWithMemo/ComponentWithMemo";
-import ComponentWithUseMemo from "./components/ComponentWithUseMemo";
+import ComponentWithUseMemo from "./components/ComponentWithUseMemo/ComponentWithUseMemo";
+import {HelpsToReactMemo} from "./components/ComponentWithUseMemo/HelpsToReactMemo";
+import {SelectWithMemo} from "./components/ComponentWithUseMemo/SelectWithMemo";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -79,6 +81,8 @@ function App() {
             <ControlledSelect parentSelectValue={parentSelectValue} setParentSelectValue={setParentSelectValue} />
             <ComponentWithMemo />
             <ComponentWithUseMemo />
+            <HelpsToReactMemo />
+            <SelectWithMemo />
         </div>
     );
 }

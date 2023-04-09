@@ -2,15 +2,18 @@ import React, {useState, KeyboardEvent, useEffect} from 'react';
 import s from './Select.module.css'
 
 type ItemType = {
+    id?: string
     title: string
-    value: any
+    value?: any
 }
 type SelectPropsType = {
     value: any
     onClickSelect: (value: any) => void
     items: ItemType[]
 }
-export const Select = (props: SelectPropsType) => {
+export const SelectM = React.memo((props: SelectPropsType) => {
+    console.log('select is rendering', props)
+    //debugger
     const [hoveredItemValue, setHoveredItemValue] = useState(props.value);
     const [active, setActive] = useState<boolean>(false);
 
@@ -46,7 +49,7 @@ export const Select = (props: SelectPropsType) => {
     }
 
     const onBlurHandler = () => {
-      setActive(false)
+        setActive(false)
     }
 
     //let selectStyles = s.mySelect + ' ' + (active ? s.active : + '');
@@ -61,21 +64,20 @@ export const Select = (props: SelectPropsType) => {
                     active &&
                     <div className={s.items}>
                         { props.items.map((i, index) => {
-                                    return (
-                                        <div key={index}
-                                             className={s.item + ' ' + (hoveredItemValue === i.value ? s.selected : '')}
-                                             onMouseEnter={ ()=>{setHoveredItemValue(i.value)} }
-                                             onClick={() => {onItemClick(i.value)}}>
-                                            {i.title}
-                                        </div>
-                                    )
-                                }
-                            )}
+                                return (
+                                    <div key={index}
+                                         className={s.item + ' ' + (hoveredItemValue === i.value ? s.selected : '')}
+                                         onMouseEnter={ ()=>{setHoveredItemValue(i.value)} }
+                                         onClick={() => {onItemClick(i.value)}}>
+                                        {i.title}
+                                    </div>
+                                )
+                            }
+                        )}
                     </div>
                 }
             </div>
         </div>
     );
-};
+})
 
-export const SelectM = React.memo(Select);
