@@ -17,9 +17,9 @@ export const CuteUseState = () => {
         <h3>Cute useState</h3>
         {counter}
         <button onClick={()=> setCounter(counter + 1)}>+</button>
-          {counter}
+        {counter}
         <button onClick={()=> setCounter(changer)}>+</button>
-          {counter}
+        {counter}
         <button onClick={()=> setCounter(state => state + 1)}>+</button>
       </div>
   )
