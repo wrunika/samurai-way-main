@@ -15,6 +15,7 @@ import {ComponentWithMemo} from "./components/ComponentWithMemo/ComponentWithMem
 import ComponentWithUseMemo from "./components/ComponentWithUseMemo/ComponentWithUseMemo";
 import {HelpsToReactMemo} from "./components/ComponentWithUseMemo/HelpsToReactMemo";
 import {SelectWithMemo} from "./components/ComponentWithUseMemo/SelectWithMemo";
+import {LikeUseCallback} from "./components/ComponentWithUseCallback/LikeUseCallback";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -83,6 +84,7 @@ function App() {
             <ComponentWithUseMemo />
             <HelpsToReactMemo />
             <SelectWithMemo />
+            <LikeUseCallback />
         </div>
     );
 }

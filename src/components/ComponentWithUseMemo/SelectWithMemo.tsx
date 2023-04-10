@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import {SelectM} from "../Select/Select";
 
 export const SelectWithMemo = () => {
